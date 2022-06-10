@@ -2,6 +2,8 @@ image: drud/ddev-gitpod-base:latest
 tasks:
   - name: build-run
     init: |
+      # ping me on prebuild execution here:
+      curl https://8081-gitpodio-empty-86us2550v8z.ws-eu47.gitpod.io/?ping=$(date +%s)
       # Compile ddev
       make
       cd /tmp && ddev config --auto
